@@ -1,0 +1,2 @@
+Step 1. cd into the directory you want to serve.
+Step 2. run node /path/to/server.js.
