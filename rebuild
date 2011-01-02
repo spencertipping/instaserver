@@ -1,0 +1,5 @@
+#!/bin/bash
+rm -f server.js
+curl spencertipping.com/caterwaul/caterwaul.all.js >> server.js
+curl spencertipping.com/montenegro/montenegro.server.js >> server.js
+cat instaserver.js >> server.js
