@@ -1,5 +1,12 @@
 #!/bin/bash
 rm -f server.js
-curl spencertipping.com/caterwaul/caterwaul.all.js >> server.js
-curl spencertipping.com/montenegro/montenegro.server.js >> server.js
+
+if [[ $1 == local ]]; then
+  cat ../caterwaul/caterwaul.all.js >> server.js
+  cat ../montenegro/montenegro.server.js >> server.js
+else
+  curl spencertipping.com/caterwaul/caterwaul.all.js >> server.js
+  curl spencertipping.com/montenegro/montenegro.server.js >> server.js
+fi
+
 cat instaserver.js >> server.js
