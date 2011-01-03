@@ -1,2 +1,17 @@
-Step 1. cd into the directory you want to serve.
-Step 2. run node /path/to/server.js. Your directory will be served on localhost:8080.
+Step 1. Run ./instaserver child my-server.
+Step 2. mv my-server into the directory you want to serve.
+Step 3. cd there and run ./my-server.
+
+Your directory will be served on 0.0.0.0:8080. A special URL, 'proxy',
+is provided for external requests; e.g:
+
+  http://localhost:8080/proxy/www.google.com/   # retrieves Google
+
+You can create aliases to /proxy/ to provide passthroughs to other
+services. See the Montenegro documentation for information about how
+to code it. The Javascript file creating the server can be accessed
+like this:
+
+  ./my-server edit js::server
+
+From there you can customize the server initialization.
