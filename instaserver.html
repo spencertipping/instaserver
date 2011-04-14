@@ -511,7 +511,32 @@ meta::configuration('dependencies', <<'__f95df108155922f9337d584d60856ba3');
 caterwaul.all.js:     http://spencertipping.com/caterwaul/caterwaul.all.min.js
 montenegro.server.js: http://spencertipping.com/montenegro/montenegro.server.js
 __f95df108155922f9337d584d60856ba3
+meta::data('author', 'Spencer Tipping');
 meta::data('default-action', 'shell');
+meta::data('description.html', <<'__209cae9f2ef7abac025334614dd11ab3');
+<h2>Instant node.js file server</h2>
+<p>You can use Instaserver as-is to serve the files in the current directory. To do this, copy <code>instaserver.html</code> into the directory you'd like to serve and then run
+<code>./instaserver.html run</code>.
+
+<p>Your directory will be served on 0.0.0.0:8080. A special URL, 'proxy', is provided for external requests; e.g:</p>
+
+<pre>http://localhost:8080/proxy/www.google.com/   # retrieves Google</pre>
+
+<h2>Customization</h2>
+<p>This is a self-modifying Perl file, so you can easily clone it to create customized copies. To do this:</p>
+<ol>
+<li>Run <code>./instaserver child my-server</code>.</li>
+<li>Move my-server into the directory you want to serve.</li>
+<li>cd there and run <code>./my-server run</code>.</li>
+</ol>
+
+<p>You can create aliases to /proxy/ to provide passthroughs to other services. See the Montenegro documentation for information about how to code it. The Javascript file creating the server
+   can be accessed like this:</p>
+
+<pre>./my-server edit js::server</pre>
+
+<p>From there you can customize the server initialization.</p>
+__209cae9f2ef7abac025334614dd11ab3
 meta::data('libraries', <<'__cca38bdfe6664615b581ec6dff43cf46');
 # URLs of libraries to be downloaded into the lib/ directory.
 http://spencertipping.com/caterwaul/caterwaul.all.js
@@ -541,6 +566,7 @@ THE SOFTWARE.
 __3c6177256de0fddb721f534c3ad8c0ee
 meta::data('main', 'server.js');
 meta::data('name', 'instaserver');
+meta::data('permanent-identity', '93990a655593f0eba10b60846b4a2213');
 meta::data('quiet', '1');
 meta::data('watching', '1');
 meta::function('alias', <<'__28744564997657da45ab16cd5b441104');
