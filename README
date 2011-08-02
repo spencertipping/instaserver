@@ -1,6 +1,6 @@
-Step 1. Run ./instaserver child my-server.
+Step 1. Run ./instaserver.html child my-server.
 Step 2. mv my-server into the directory you want to serve.
-Step 3. cd there and run ./my-server.
+Step 3. cd there and run ./my-server run.
 
 Your directory will be served on 0.0.0.0:8080. A special URL, 'proxy',
 is provided for external requests; e.g:
